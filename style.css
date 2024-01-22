@@ -47,7 +47,6 @@ body {
   width: 100%;
   position: absolute;
   top: -4rem;
-
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
@@ -95,15 +94,19 @@ body {
   font-size: 2.4rem;
 }
 
-.btn-country {
+.btn-country,
+.country-input {
   border: none;
-  font-size: 2rem;
-  padding: 2rem 5rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
   border-radius: 0.7rem;
-  color: white;
-  background-color: orangered;
+  color: rgb(0, 0, 0);
+  background-color: rgb(104, 166, 70);
   cursor: pointer;
-  margin-top: 2rem;
+}
+
+.country-input {
+  margin-top: 6rem;
 }
 
 .images {
@@ -142,7 +145,9 @@ body {
     top: -3rem;
   }
 
-  .btn-country {
+  .btn-country,
+  .country-input {
     width: 100%;
+    margin-top: 2rem;
   }
 }

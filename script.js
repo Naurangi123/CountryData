@@ -1,6 +1,7 @@
 "use strict";
 
 const btn = document.querySelector(".btn-country");
+const inputField = document.querySelector(".country-input");
 const countriesContainer = document.querySelector(".countries");
 
 const getCountryData = function (country) {
@@ -21,8 +22,8 @@ const getCountryData = function (country) {
         +data.population / 1000000
       ).toFixed(1)} people</p>
       <p class="country__row"><span>🗣️</span>${
-        data.languages[Object.keys(data.languages)[0]]
-      }</p>
+        data.languages[Object.keys(data.languages)[1]]
+      },${data.languages[Object.keys(data.languages)[0]]}</p>
       <p class="country__row"><span>💰</span>${
         data.currencies[Object.keys(data.currencies)[0]].name
       }</p>
@@ -34,50 +35,11 @@ const getCountryData = function (country) {
   });
 };
 
-// getCountryData("usa");
-// getCountryData("nepal");
-
-// getCountryData("pakistan");
-// getCountryData;
-
 btn.addEventListener("click", function () {
-  const userInput = prompt("Enter a country:");
+  const userInput = inputField.value.trim(); // Get the value from the input field
   if (userInput) {
     // Call the function with user input to fetch and display information
-    getCountryData(userInput.toLowerCase()); // Convert to lowercase for consistency with API
+    getCountryData(userInput.toLowerCase());
+    inputField.value = ""; // Clear the input field after processing
   }
 });
-// "use strict";
-
-// const btn = document.querySelector(".btn-country");
-// const countriesContainer = document.querySelector(".countries");
-
-// const renderCountry = function (data, className = "") {
-//   const html = `
-//   <article class="country ${className}">
-//     <img class="country__img" src="${data.flag}" />
-//     <div class="country__data">
-//       <h3 class="country__name">${data.name}</h3>
-//       <h4 class="country__region">${data.region}</h4>
-//       <p class="country__row"><span>👫</span>${(
-//         +data.population / 1000000
-//       ).toFixed(1)} people</p>
-//       <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
-//       <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
-//     </div>
-//   </article>
-//   `;
-//   countriesContainer.insertAdjacentHTML("beforeend", html);
-//   countriesContainer.style.opacity = 1;
-// };
-
-// // const renderError = function (msg) {
-// //   countriesContainer.insertAdjacentText("beforeend", msg);
-// //   countriesContainer.style.opacity = 1;
-// // };
-
-// // const getJSON = async function (url, errorMsg = "Something went wrong") {
-// //   const response = await fetch(url);
-// //   if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
-// //   return await response.json();
-// // };
