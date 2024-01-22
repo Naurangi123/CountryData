@@ -24,6 +24,7 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
+  overflow-x:scroll;
 }
 
 .countries {
@@ -31,6 +32,7 @@ body {
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s;
+  overflow-y:scroll;
 }
 
 .country {
