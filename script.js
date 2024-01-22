@@ -36,10 +36,9 @@ const getCountryData = function (country) {
 };
 
 btn.addEventListener("click", function () {
-  const userInput = inputField.value.trim(); // Get the value from the input field
+  const userInput = inputField.value.trim(); 
   if (userInput) {
-    // Call the function with user input to fetch and display information
     getCountryData(userInput.toLowerCase());
-    inputField.value = ""; // Clear the input field after processing
+    inputField.value = ""; 
   }
 });
